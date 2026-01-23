@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>تسجيل الدخول</title>
+
+<style>
+ *{  
+    /* padding: 0;  */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:white;
+}
+
+/* صندوق تسجيل الدخول */
+.login-box{
+    width:340px;
+    padding:30px;
+    background: white;
+    backdrop-filter: blur(12px);
+    
+    border-radius:16px;
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+    color:white;
+    text-align:center;
+}
+
+.login-box h2{
+    margin-bottom:20px;
+    color:black;
+}
+
+/* الحقول */
+.login-box input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border: 1px soild black;
+    border-radius:8px;
+    outline:none;
+    font-size:14px;
+}
+
+.login-box input:focus{
+    box-shadow:0 0 0 2px rgba(255,255,255,0.6);
+    outline: 1px solid green;        
+}
+
+/* زر الدخول */
+.login-box button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:2px soild black;
+    border-radius:8px;
+    background:#1abc9c;
+    color:black;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.login-box button:hover{
+    background:linear-gradient(135deg,#b7ffb7,#1abc9c);
+}
+
+/* رسالة */
+.message{
+    margin-top:15px;
+    font-size:14px;
+    display:none;
+}
+
+.error{
+    color:#ffb3b3;
+}
+
+.success{
+    color:#b7ffb7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-box">
+    <img src="C:\Users\ASUS\imp\RideX1.jpg" style="width: 100px;" alt="">
+    <h2>تسجيل الدخول</h2>
+
+    <input type="text" id="username" placeholder="اسم المستخدم">
+    <input type="password" id="password" placeholder="كلمة المرور">
+
+    <button onclick="login()">دخول</button>
+
+    <div id="message" class="message"></div>
+</div>
+
+<script>
+function login(){
+    let username = document.getElementById("username").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let message  = document.getElementById("message");
+
+    message.style.display = "block";
+
+    if(username === "" || password === ""){
+        message.textContent = "⚠️ الرجاء ملء جميع الحقول";
+        message.className = "message error";
+        return;
+    }
+
+    if(password.length < 6){
+        message.textContent = "⚠️ كلمة المرور يجب أن تكون 6 أحرف على الأقل";
+        message.className = "message error";
+        return;
+    }
+
+    message.textContent = "✅ تم تسجيل الدخول بنجاح";
+    message.className = "message success";
+}
+</script>
+
+</body>
+</html>
