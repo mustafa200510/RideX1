@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+.conti{
+    width:120px;
+    height: 100vh;
+    background: #1abc9c;
+    color:white;
+   
+}
+.cont2{
+    display: none;
+}
+.cont3{
+    
+}
+p{
+padding: 6px;
+/* margin: 10px; */
+/* background: white; */
+
+}
+p:hover,button:hover{
+background: black;
+cursor: pointer;
+}
+button{
+    background: #1abc9c;
+    border-radius: 2px;
+    width: 50px;
+    border: none;
+    color: white;
+}
+#close{
+    position: absolute;
+    left: 120px;
+}

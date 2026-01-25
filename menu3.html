@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Sidebar Menu</title>
+  <link rel="stylesheet" href="ms.css">
+</head>
+<style>
+    /* شكل القائمة الجانبية */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background: linear-gradient(180deg, teal, darkcyan);
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+}
+
+/* الحالة المخفية */
+.cont2 {
+  transform: translateX(-240px);
+}
+
+/* شكل العناصر داخل القائمة */
+.sidebar p {
+  margin: 15px 0;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.sidebar p:hover {
+  color: #ffd700; /* لون ذهبي عند المرور */
+}
+
+/* الأزرار */
+.btn {
+  margin: 15px;
+  padding: 10px 20px;
+  border: none;
+  background-color: teal;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80px;
+}
+
+.btn:hover {
+  background-color: darkcyan;
+}
+#close{
+    margin-left: 100px;
+}
+/* إخفاء زر */
+.hidden {
+  display: none;
+}
+</style>
+<body>
+  <button id="open" class="btn">Open Menu</button>
+  <button id="close" class="btn hidden">Close Menu</button>
+
+  <div class="sidebar cont2">
+    <p>Home</p>
+    <p>Courses</p>
+    <p>News</p>
+    <p>Problem Solving</p>
+    <p>Quizzes</p>
+    <p>Blogs</p>
+    <p>Chats</p>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("open");
+    const closeBtn = document.getElementById("close");
+    const sidebar = document.querySelector(".sidebar");
+
+    openBtn.onclick =function ()  {
+      sidebar.classList.remove("cont2");
+      openBtn.classList.add("hidden");
+      closeBtn.classList.remove("hidden");
+      this.classList.add("hidden")
+    };
+
+    closeBtn.onclick = () => {
+      sidebar.classList.add("cont2");
+      closeBtn.classList.add("hidden");
+      openBtn.classList.remove("hidden");
+      this.classList.add("hidden")
+    };
+  </script>
+</body>
+</html>

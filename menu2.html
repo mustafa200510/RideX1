@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+  <link rel="stylesheet" href="ms.css">
+</head>
+<style>
+    /* شكل القائمة */
+.conti {
+  width: 200px;
+  height: 100vh;
+  background-color: teal;
+  color: white;
+  padding: 20px;
+  transition: transform 0.3s ease; /* حركة سلسة */
+}
+
+/* الحالة المخفية */
+.cont2 {
+  transform: translateX(-220px); /* تخفي القائمة خارج الشاشة */
+}
+
+/* شكل الأزرار */
+button {
+  margin: 10px;
+  padding: 8px 15px;
+  border: none;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: darkcyan;
+}
+</style>
+<body>
+  <button id="open">open</button>
+  <button id="close">close</button>
+
+  <div class="conti">
+    <p>home</p>
+    <p>courses</p>
+    <p>news</p>
+    <p>problem solving</p>
+    <p>quizs</p>
+    <p>blogs</p>
+    <p>chats</p>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("open");
+    const closeBtn = document.getElementById("close");
+    const menu = document.querySelector(".conti");
+
+    openBtn.onclick = function () {
+      // إذا القائمة مخفية، أظهرها
+      if (menu.classList.contains("cont2")) {
+        menu.classList.toggle("cont2");
+      }
+    };
+
+    closeBtn.onclick = function () {
+      // إذا القائمة ظاهرة، أخفيها
+      if (!menu.classList.contains("cont2")) {
+        menu.classList.toggle("cont2");
+      }
+    };
+  </script>
+</body>
+</html>

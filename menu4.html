@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Sidebar Menu</title>
+  <link rel="stylesheet" href="ms.css">
+  <!-- مكتبة أيقونات Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <style>
+        /* خلفية عامة */
+    /* خلفية عامة */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* القائمة الجانبية */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: linear-gradient(180deg, #008080, #004d4d);
+  color: white;
+  padding: 20px;
+  box-shadow: 2px 0 15px rgba(0,0,0,0.3);
+  transition: transform 0.4s ease;
+  z-index: 1000;
+}
+
+/* الحالة المخفية */
+.cont2 {
+  transform: translateX(-260px);
+}
+
+/* شعار */
+.logo {
+  font-size: 22px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #ffd700;
+}
+
+/* عناصر القائمة */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 18px 0;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.sidebar ul li:hover {
+  color: #ffd700;
+  transform: translateX(5px);
+}
+
+/* الأزرار */
+.btn {
+  margin: 15px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #008080;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #004d4d;
+}
+
+/* إخفاء زر */
+.hidden {
+  display: none;
+  /* margin-left: 40px; */
+  
+}
+.x{
+  margin-left: 100px;
+}
+
+    </style>
+  <button id="open" class="btn "><i class="fas fa-bars"></i> </button>
+  <button id="close" class="btn hidden x"><i class="fas fa-times"></i></button>
+
+  <div class="sidebar cont2">
+    <h2 class="logo"><i class="fas fa-graduation-cap"></i> MyLearning</h2>
+    <ul>
+      <li><i class="fas fa-user"></i> Home</li>
+      <li><i class="fas fa-book"></i> Courses</li>
+      <li><i class="fas fa-newspaper"></i> News</li>
+      <li><i class="fas fa-lightbulb"></i> Problem Solving</li>
+      <li><i class="fas fa-question-circle"></i> Quizzes</li>
+      <li><i class="fas fa-blog"></i> Blogs</li>
+      <li><i class="fas fa-comment"></i> Chats</li>
+    </ul>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("open");
+    const closeBtn = document.getElementById("close");
+    const sidebar = document.querySelector(".sidebar");
+
+    openBtn.onclick = () => {
+      sidebar.classList.remove("cont2");
+      openBtn.classList.add("hidden");
+      closeBtn.classList.remove("hidden");
+    };
+
+    closeBtn.onclick = () => {
+      sidebar.classList.add("cont2");
+      closeBtn.classList.add("hidden");
+      openBtn.classList.remove("hidden");
+    };
+  </script>
+</body>
+</html>

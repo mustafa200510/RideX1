@@ -1,0 +1,136 @@
+<!-- <h1>example 1</h1>
+<p id="p">html</p>
+<button id="b" onclick="change()">submit</button>
+<script>
+  let i = document.getElementById("p");
+  let b =document.getElementById("b");
+  function change(){
+    i.innerText="+ javascript"
+  }
+
+</script>
+
+
+<h1>example 2</h1>
+<h1 id="c">0</h1>
+<button id="b1" >submit</button>
+<script>
+   let c = document.getElementById("c");
+  let b1 =document.getElementById("b1");
+  let j= 0;
+  b1.onclick=function(){
+    j++
+    c.innerText=j
+  }
+
+</script>
+ 
+
+<h1>example 3</h1>
+<input type="text" id="in" placeholder="write name?">
+<button onclick="sayhello()" >submit</button>
+<p id="p1"></p>
+<script>
+  let p1=document.getElementById("p1")
+  let input=document.getElementById("in");
+  function sayhello(){
+    p1.innerText=` ${input.value}`
+  }
+</script>
+
+
+<h1>example 4</h1>
+<h3 id="h3">hello world</h3>
+<button id="button">submit</button>
+
+<script>
+  let w=document.getElementById("h3");
+  let button1=document.getElementById("button");
+  button1.onclick=function(){
+    w.innerText=prompt("enter any thing")
+    document.body.style.background="blue"
+  }
+</script>
+
+
+
+<h1>example 5</h1>
+<div id ="div">messi is the best </div>
+<button id="b12">submit</button>
+<script>
+  let d=document.getElementById("div");
+  let b12=document.getElementById("b12")
+  b12.onclick=function(){
+    d.style.display="none"
+  }
+  
+</script>
+
+
+<h1>example 6 or 7</h1>
+<p id="off">OFF</p>
+<button id="change" onclick="togoole()">change</button>
+
+<script>
+  function togoole() {
+    let off = document.getElementById('off');
+    off.innerText = (off.innerText === "OFF") ? "ON" : "OFF";
+  }
+</script> -->
+
+
+
+
+
+
+<style>
+  .name{
+    background: #1abc9c;
+    color:aqua;
+  }
+</style>
+
+<p id="hello">hello world</p>
+
+<!-- <script>
+  let hello =document.getElementById("hello")
+  hello.onclick=function(){
+    hello.classList.add("name")
+    
+    console.log()
+  }
+  hello.oncontextmenu=function(){
+    hello.classList.remove("name")
+  }
+
+</script> -->
+
+<script>
+  let hello =document.getElementById("hello")
+  hello.onclick=function(){
+    hello.classList.toggle("name")
+    
+    console.log()
+  }
+ 
+
+</script>
+
+<input type="text" placeholder="test" id="text">
+<button id="btn">button</button>
+<script>
+  let x=document.getElementById("text");
+  let y=document.getElementById("btn")
+  onload=function(){
+    // y.click();
+    x.vlaue="tests";
+    x.placeholder="messi"
+  }
+  y.onclick=function(){
+    if (x.value!==""){
+    x.style.background="red"}
+      }  
+</script>
+
+
+
