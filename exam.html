@@ -6,6 +6,55 @@
     <title>Document</title>
 </head>
 <body>
-    <button class="btn"><i class="fas fa-home"></i>Open</button><button class="btn">close</button>
+    <style>
+        body{
+            height: 4000px;
+            width: 2000px;
+        }
+        .btn{
+            width:30px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            background: #1abc9c;
+            cursor: pointer;
+            position: fixed;
+            bottom:10px;
+            right: 10px;
+            display: none;
+
+        }
+        .c{
+            display: block;
+        }
+    </style>
+    <h2 id="start">messedfs</h2>
+    <h2>eragre</h2>
+    <h2>eeragr</h2>a
+    <h2>earraEA</h2>
+    <h2>wqer3</h2>
+    <h2>WEFCEFWafcwf</h2>
+    <h2>weqrvfwrverwea</h2>
+    <h2>WEAGQEVF</h2>
+    <h2>ewsdafwcf</h2>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+
+
+    <button class="btn"><i class="fas fa-"></i><a href="#start" style="text-decoration: none; color:white">^</a></button>
+    <script>
+        let btn=document.querySelector(".btn");
+        window.onscroll=function(){
+            if(scrollY>=400){
+                btn.classList.add("c");
+                return
+            }
+             btn.classList.remove("c")
+        }
+
+    </script>
 </body>
 </html>
