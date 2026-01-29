@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>X O Game</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f0f2f5;
+    font-family: Arial, sans-serif;
+  }
+
+  .game {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+  }
+
+  .cell {
+    background: #fff;
+    border: 2px solid #4a6cf7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .cell:hover {
+    background: #e6e6ff;
+  }
+
+  .info {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #4a6cf7;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #3b5be0;
+  }
+</style>
+</head>
+<body>
+
+<div>
+  <div class="info" id="info">Turn: X</div>
+  <div class="game" id="game">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <div style="text-align:center;">
+    <button onclick="resetGame()">Restart Game</button>
+  </div>
+</div>
+
+<script>
+  const cells = document.querySelectorAll(".cell");
+  const info = document.getElementById("info");
+  let turn = "X";
+  let board = ["","","","","","","","",""];
+  let gameOver = false;
+
+  const winPatterns = [
+    [0,1,2],[3,4,5],[6,7,8], // rows
+    [0,3,6],[1,4,7],[2,5,8], // cols
+    [0,4,8],[2,4,6]          // diagonals
+  ];
+
+  cells.forEach((cell, index) => {
+    cell.addEventListener("click", () => {
+      if(board[index] !== "" || gameOver) return;
+
+      board[index] = turn;
+      cell.textContent = turn;
+
+      if(checkWin(turn)){
+        info.textContent = turn + " Wins!";
+        gameOver = true;
+        return;
+      }
+
+      if(board.every(cell => cell !== "")){
+        info.textContent = "Draw!";
+        gameOver = true;
+        return;
+      }
+
+      turn = turn === "X" ? "O" : "X";
+      info.textContent = "Turn: " + turn;
+    });
+  });
+
+  function checkWin(player){
+    return winPatterns.some(pattern => 
+      pattern.every(index => board[index] === player)
+    );
+  }
+
+  function resetGame(){
+    board.fill("");
+    cells.forEach(cell => cell.textContent = "");
+    turn = "X";
+    gameOver = false;
+    info.textContent = "Turn: X";
+  }
+</script>
+
+</body>
+</html>

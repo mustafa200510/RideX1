@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      background:#333;
+      font-family:"Poppins",sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+    .todo-box{
+      width:500px;
+      background:#fff;
+      border-radius:10px;
+      padding:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+    h2{
+      text-align:center;
+      margin-bottom:15px;
+    }
+    .input-area{
+      display:flex;
+      gap:10px;
+      margin-bottom:15px;
+    }
+    #inp{
+      flex:1;
+      padding:8px;
+      border:1px solid #ccc;
+      border-radius:6px;
+    }
+    #btn{
+      padding:8px 15px;
+      border:none;
+      background:#2ecc71;
+      color:#fff;
+      font-weight:600;
+      border-radius:6px;
+      cursor:pointer;
+    }
+    ul{list-style:none;}
+    li{
+      background:#f2f2f2;
+      padding:10px;
+      margin-bottom:8px;
+      border-radius:6px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+    li.completed{ text-decoration:line-through; color:gray; }
+    .actions button{
+      margin-left:5px;
+      border:none;
+      padding:5px 10px;
+      border-radius:4px;
+      cursor:pointer;
+      font-size:12px;
+    }
+    .done-btn{ background:#27ae60; color:#fff; }
+    .delete-btn{ background:#e74c3c; color:#fff; }
+  </style>
+</head>
+<body>
+  <div class="todo-box">
+    <h2>To Do List</h2>
+    <div class="input-area">
+      <input type="text" placeholder="Enter a task" id="inp">
+      <button id="btn">Add</button>
+    </div>
+    <ul id="ul"></ul>
+  </div>
+
+  <script>
+    const input = document.getElementById("inp");
+    const button = document.getElementById("btn");
+    const ul = document.getElementById("ul");
+
+    button.onclick = function() {
+      const taskText = input.value.trim();
+      if(taskText === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = taskText;
+
+      const actions = document.createElement("div");
+      actions.className = "actions";
+
+      const doneBtn = document.createElement("button");
+      doneBtn.textContent = "Done";
+      doneBtn.className = "done-btn";
+      doneBtn.onclick = () => li.classList.toggle("completed");
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.className = "delete-btn";
+      deleteBtn.onclick = () => li.remove();
+
+      actions.appendChild(doneBtn);
+      actions.appendChild(deleteBtn);
+      li.appendChild(actions);
+      ul.appendChild(li);
+
+      input.value = "";
+    };
+
+    // إضافة المهمة بالضغط على Enter
+    // input.addEventListener("keypress", e => {
+    //   if(e.key === "Enter") button.click();
+    // });
+  </script>
+</body>
+</html>

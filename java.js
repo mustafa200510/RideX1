@@ -22,12 +22,3 @@ btn.onclick= function(){
 // })
 
 
-let dollar=document.getElementById("dollar");
-let irq=document.getElementById("irq");
-dollar.onkeyup=function(){
-   console.log(dollar.value)
-irq.value=dollar.value*1500;
-}
-irq.onkeyup=function(){
-dollar.value=irq.value/1500;
-}

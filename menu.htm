@@ -23,23 +23,21 @@
         let open12=document.getElementById("open");
         let close1=document.getElementById("close");
         let cont22=document.querySelector(".conti");
-    // close1.onclick=function(){
-    //     cont22.classList.add("cont2");
-    //     // close1.style.display="none"
-    //     this.classList.add("cont2");
-    //     open12.classList.remove("cont2")
+    close1.onclick=function(){
+        cont22.classList.add("cont2");
+        // close1.style.display="none"
+        this.classList.add("cont2");
+        open12.classList.remove("cont2")
 
-    //     // open12.style.display="block"
-    // }
-    // open12.onclick=function(){
-    //     cont22.classList.remove("cont2");
-    //     this.classList.add("cont2");
-    //     // open12.style.display="none";
-    //     close1.classList.remove("cont2");
-    // }
-    button.onclick=function(){
-        
+        // open12.style.display="block"
     }
+    open12.onclick=function(){
+        cont22.classList.remove("cont2");
+        this.classList.add("cont2");
+        // open12.style.display="none";
+        close1.classList.remove("cont2");
+    }
+   
     </script>
 </body>
 </html>
