@@ -1,0 +1,157 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #0a2540;
+      color: white;
+    }
+
+    header {
+      background-color: #0B1F33;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between; 
+      padding: 10px 40px; 
+      height: 80px;
+       
+    }
+
+    header .s1 img {
+      width: 100px;
+      height: 50px;
+      border-radius: 6px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px; /* مسافة بين الروابط */
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #16a085;
+      text-decoration: underline;
+    }
+
+    #b1 {
+      text-decoration: none;
+      background-color: rgb(3, 201, 3);
+      padding: 10px 20px;
+      color: #0B1F33;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+    }
+
+    #b1:hover {
+      background-color: #16a085;
+    }
+
+    main #s1 {
+      text-align: center;
+      background: linear-gradient(to left, #0a2540, #0f4c75); 
+      padding: 80px 20px;
+    } 
+
+     main #s1 h1 {
+      margin-bottom: 20px;
+      
+    }
+
+    main #s1 p {
+      margin-bottom: 30px;
+    } 
+
+    main #s1 button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      background-color: #16a085;
+      color: white;
+      font-size: 16px;
+      /* cursor: pointer; */
+      transition: background-color 0.3s;
+    }
+
+
+    main #s1 button:hover {
+      background-color: rgb(3, 201, 3);
+    }
+    #s2 {
+      background-color: #fff;
+      color: #0B1F33;
+    }
+    main #s2 {
+      padding: 60px 20px;
+      text-align: center;
+       
+    }
+
+    main #s2 h2 {
+      margin-bottom: 20px;
+      text-align: right;
+    }
+    .d1{
+      
+      display: flex ;
+      flex-wrap: wrap;
+      justify-content: center;
+      
+      align-items: center;
+      gap: 6px;
+      
+    }
+
+    main #s2  p {
+      background-color: white ;
+      border:black 1px solid ;
+    
+      border-radius: 8px;
+      opacity: 0.9;
+      width: 200px;
+      height: 150px;
+      padding: 20px 40px;
+      margin: 10px;
+      font-size: 18px;
+      box-shadow: whitesmoke 2px 2px 8px;
+      
+    }
+    main #s2 .d1:hover {
+      outline:2px solid hsl(180, 82%, 37%);
+      border-radius: 9px;
+    }
+    main #s2 p:hover {
+      box-shadow: #16a085 4px 4px 12px;
+      transform: scale(1.05);
+    
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .b2 {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      background-color: #16a085;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      /* transition: background-color 0.3s; */
+    }
+    .b2:hover {
+      background-color: rgb(65, 65, 85);
+    }
+    footer {
+      background-color: #0B1F33;
+      height: 60px;
+    }
+   
